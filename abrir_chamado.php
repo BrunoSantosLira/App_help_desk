@@ -27,6 +27,9 @@
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
+            <span class="nav-item text-white">
+                <?php $_SESSION['perfil_id'] == 1 ? print_r( 'USUARIO') : print_r( 'ADMINISTRADOR')?>
+            </span>
             <a href="logoff.php" class="nav-link">SAIR</a>
         </li>
       </ul>

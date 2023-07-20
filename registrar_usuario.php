@@ -3,7 +3,9 @@ echo '<pre>';
 print_r($_POST);
 echo '</pre>';
 
-if(!empty($_POST['nome'])){
+
+if(!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['tel']) && !empty($_POST['senha'])){
+    echo 'PASSOU!!!';
     $dsn = "mysql:host=localhost;dbname=chamados";
     $user = 'root';
     $password = '';
@@ -33,13 +35,13 @@ if(!empty($_POST['nome'])){
         $stmt->execute();
     
         $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        header('Location: index.php?registro=sucesso');
+        //header('Location: index.php?registro=sucesso');
     }else{
-        header('Location: sign.php?registro=erro2');
+        //header('Location: sign.php?registro=erro2');
     }
 
 }else{
-    header('Location: sign.php?registro=erro');
+    //header('Location: sign.php?registro=erro');
 }
 
 ?>

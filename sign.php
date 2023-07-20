@@ -35,16 +35,16 @@
             <div class="card-body">
               <form action='registrar_usuario.php' method='post'>
               <div class="form-group">
-                  <input name="nome" type="text" class="form-control" placeholder="Nome">
+                  <input name="nome" type="text" required class="form-control" placeholder="Nome">
                 </div>
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input name="email" type="email" required class="form-control" placeholder="E-mail">
                 </div>
                 <div class="form-group">
-                  <input name="tel" type="tel" class="form-control" placeholder="Telefone">
+                  <input name="tel" type="tel" required class="form-control" placeholder="Telefone">
                 </div>
                 <div class="form-group">
-                  <input name="senha" type="password" class="form-control" placeholder="Senha">
+                  <input name="senha" type="password" required class="form-control" placeholder="Senha">
                 </div>
                 <?php if(isset($_GET['registro']) && $_GET['registro'] == 'erro'){ ?>
                     <div class="text-danger">

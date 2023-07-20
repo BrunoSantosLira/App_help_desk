@@ -9,7 +9,7 @@
   $conn = new PDO($dsn,$user,$password);
   $id = $_SESSION['id'];
 
-  if($_SESSION['perfil_id'] == 2){
+  if($_SESSION['perfil_id'] == 1){
     $query = "SELECT * FROM chamados WHERE User= $id ";
   }else{
     $query = "SELECT * FROM chamados";
@@ -45,6 +45,9 @@
       </a>
       <ul class="navbar-nav">
         <li class="nav-item">
+            <span class="nav-item text-white">
+                <?php $_SESSION['perfil_id'] == 1 ? print_r( 'USUARIO') : print_r( 'ADMINISTRADOR')?>
+            </span>
             <a href="logoff.php" class="nav-link">SAIR</a>
         </li>
       </ul>

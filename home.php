@@ -9,6 +9,7 @@
     <title>App Help Desk</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
     <style>
       .card-home {
@@ -29,7 +30,7 @@
       <ul class="navbar-nav">
         <li class="nav-item">
             <span class="nav-item text-white">
-                <?php $_SESSION['perfil_id'] == 1 ? print_r( 'ADMINISTRADOR') : print_r( 'USUÁRIO')?>
+                <?php $_SESSION['perfil_id'] == 1 ? print_r( 'USUARIO') : print_r( 'ADMINISTRADOR')?>
             </span>
             <a href="logoff.php" class="nav-link">SAIR</a>
         </li>
@@ -54,11 +55,21 @@
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                   <a href="consultar_chamado.php">
-
                     <img src="formulario_consultar_chamado.png" width="70" height="70">
                   </a>
                 </div>
               </div>
+              <!-- OPÇÃO LIBERADA APENAS PARA ADMINS -->
+              <?php if($_SESSION['perfil_id'] == 2){ ?>
+                <div class="row mt-5">
+                  <div class="col-12 d-flex justify-content-center">
+                    <a href="usuarios.php">
+                      <i class="fa-solid fa-user fa-2xl" style="font-size:70px;color:#17A2B8;"></i>
+                    </a>
+                  </div>
+                </div>
+              <?php } ?>
+
             </div>
           </div>
         </div>
